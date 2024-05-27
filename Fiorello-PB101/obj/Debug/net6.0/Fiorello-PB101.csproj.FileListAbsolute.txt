@@ -1742,3 +1742,4 @@ C:\Users\ASUS\OneDrive\Рабочий стол\adminpanel\MVC-Basket-JQuery-Ajax
 C:\Users\ASUS\OneDrive\Рабочий стол\adminpanel\MVC-Basket-JQuery-Ajax\Fiorello-PB101\obj\Debug\net6.0\Fiorello-PB101.pdb
 C:\Users\ASUS\OneDrive\Рабочий стол\adminpanel\MVC-Basket-JQuery-Ajax\Fiorello-PB101\obj\Debug\net6.0\Fiorello-PB101.genruntimeconfig.cache
 C:\Users\ASUS\OneDrive\Рабочий стол\adminpanel\MVC-Basket-JQuery-Ajax\Fiorello-PB101\obj\Debug\net6.0\ref\Fiorello-PB101.dll
+C:\Users\ASUS\OneDrive\Рабочий стол\adminpanel\MVC-Basket-JQuery-Ajax\Fiorello-PB101\obj\Debug\net6.0\Fiorello-PB101.sourcelink.json

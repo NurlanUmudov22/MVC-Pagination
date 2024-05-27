@@ -91,5 +91,37 @@ namespace Fiorello_PB101.Controllers
 
             return Ok(new { basketCount, totalCount, totalPrice });
         }
+
+
+
+
+
+        [HttpPost]
+        public IActionResult UpdateProductQuantity(int id, int quantity)
+        {
+            List<BasketVM> basketDatas = new();
+
+            if (_accessor.HttpContext.Request.Cookies["basket"] is not null)
+            {
+                basketDatas = JsonConvert.DeserializeObject<List<BasketVM>>(_accessor.HttpContext.Request.Cookies["basket"]);
+            }
+
+            var basketItem = basketDatas.FirstOrDefault(m => m.Id == id);
+            if (basketItem != null)
+            {
+                basketItem.Count = quantity;
+            }
+
+            _accessor.HttpContext.Response.Cookies.Append("basket", JsonConvert.SerializeObject(basketDatas));
+
+            int totalCount = basketDatas.Sum(m => m.Count);
+            decimal totalPrice = basketDatas.Sum(m => m.Count * m.Price);
+            int basketCount = basketDatas.Count;
+
+            var itemPrice = basketItem.Price * basketItem.Count;
+            var subtotal = basketDatas.Sum(m => m.Count * m.Price);
+
+            return Ok(new { basketCount, totalCount, totalPrice, itemPrice, subtotal });
+        }
     }
 }
